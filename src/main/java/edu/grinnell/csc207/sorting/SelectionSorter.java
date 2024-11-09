@@ -55,19 +55,30 @@ public class SelectionSorter<T> implements Sorter<T> {
    */
   @Override
   public void sort(T[] values) {
-    int size = values.length;
-    for (int i = 0; i < size - 1; i++) {
-      int smallerIndex = i;
-      for (int j = i + 1; j < size; j++) {
-        if (order.compare(values[j], values[smallerIndex]) < 0) {
-          smallerIndex = j;
-        } // if
-      } // for
-      if (smallerIndex != i) {
-        T temp = values[i];
-        values[i] = values[smallerIndex];
-        values[smallerIndex] = temp;
-      } // if
+    for (int i = 0; i < values.length - 1; i++) {
+      select(values, i);
     } // for
   } // sort(T[])
+
+  /**
+   * Find the smallest element in the unsorted portion of the array
+   * and place it at the given index.
+   *
+   * @param values
+   *   The array containing the elements to sort.
+   * @param startIndex
+   *   The index in the array where the smallest element in the
+   *   unsorted portion should be placed.
+   */
+  private void select(T[] values, int startIndex) {
+    int smallerIndex = startIndex;
+    for (int j = startIndex + 1; j < values.length; j++) {
+      if (order.compare(values[j], values[smallerIndex]) < 0) {
+        smallerIndex = j;
+      } // if
+    } // for
+    T temp = values[startIndex];
+    values[startIndex] = values[smallerIndex];
+    values[smallerIndex] = temp;
+  } // select(T[], int)
 } // class SelectionSorter
