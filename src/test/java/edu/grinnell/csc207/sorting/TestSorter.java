@@ -1,16 +1,12 @@
 package edu.grinnell.csc207.sorting;
 
-import edu.grinnell.csc207.util.ArrayUtils;
-
 import java.util.Arrays;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.junit.jupiter.api.Assertions.fail;
 import org.junit.jupiter.api.Test;
+
+import edu.grinnell.csc207.util.ArrayUtils;
 
 /**
  * Tests of Sorter objects. Please do not use this class directly.
@@ -120,4 +116,82 @@ public class TestSorter {
     ArrayUtils.permute(original);
     assertSorts(expected, original, intSorter);
   } // permutedIntegers
+
+  /**
+   * Test sorting an array with duplicate and negative elements.
+   */
+  @Test
+  public void duplicateAndNegativeElementsTest() {
+    if (null == intSorter) {
+      return;
+    }
+    Integer[] original = {3, -2, 1, -2, 3, 4, -5};
+    Integer[] expected = {-5, -2, -2, 1, 3, 3, 4};
+    assertSorts(expected, original, intSorter);
+  } // duplicateAndNegativeElementsTest
+
+  /**
+   * Test sorting an array of strings with varying case sensitivity.
+   */
+  @Test
+  public void caseSensitiveStringsTest() {
+    if (null == stringSorter) {
+      return;
+    }
+    String[] original = {"Alpha", "bravo", "Charlie", "delta", "Echo"};
+    String[] expected = {"Alpha", "Charlie", "Echo", "bravo", "delta"};
+    assertSorts(expected, original, stringSorter);
+  } // caseSensitiveStringsTest
+
+  /**
+   * Test sorting a partially sorted array of integers.
+   */
+  @Test
+  public void partiallySortedIntegersTest() {
+    if (null == intSorter) {
+      return;
+    }
+    Integer[] original = {1, 2, 3, 10, 7, 8, 9};
+    Integer[] expected = {1, 2, 3, 7, 8, 9, 10};
+    assertSorts(expected, original, intSorter);
+  } // partiallySortedIntegersTest
+
+  /**
+   * Permutes a sorted array several times and checks 
+   * if sorting returns the original sorted array.
+   */
+  @Test
+  public void randomPermutationsTest() {
+    if (null == intSorter) {
+      return;
+    }
+    Integer[] original = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+    Integer[] expected = original.clone();
+    for (int i = 0; i < 10; i++) {
+      Integer[] permuted = original.clone();
+      ArrayUtils.permute(permuted);
+      assertSorts(expected, permuted, intSorter);
+    } // for
+  } // randomPermutationsTest
+
+  /**
+   * Checks performance of sorting with a large array.
+   */
+  @Test
+  public void largeArrayTest() {
+    int SIZE = 1000;
+    if (null == intSorter) {
+      return;
+    }
+    Integer[] original = new Integer[SIZE];
+    for (int i = 0; i < SIZE; i++) {
+      original[i] = i; 
+    }
+    Integer[] expected = original.clone();
+    for (int i = 0; i < 5; i++) { 
+      Integer[] mixed = original.clone();
+      ArrayUtils.permute(mixed); 
+      assertSorts(expected, mixed, intSorter);
+    }
+  } // largeArrayTest
 } // class TestSorter
