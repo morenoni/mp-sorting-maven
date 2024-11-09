@@ -55,6 +55,19 @@ public class SelectionSorter<T> implements Sorter<T> {
    */
   @Override
   public void sort(T[] values) {
-    // STUB
+    int size = values.length;
+    for (int i = 0; i < size - 1; i++) {
+      int smallerIndex = i;
+      for (int j = i + 1; j < size; j++) {
+        if (order.compare(values[j], values[smallerIndex]) < 0) {
+          smallerIndex = j;
+        } // if
+      } // for
+      if (smallerIndex != i) {
+        T temp = values[i];
+        values[i] = values[smallerIndex];
+        values[smallerIndex] = temp;
+      } // if
+    } // for
   } // sort(T[])
 } // class SelectionSorter
