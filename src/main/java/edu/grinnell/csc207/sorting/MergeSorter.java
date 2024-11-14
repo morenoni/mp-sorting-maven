@@ -56,7 +56,7 @@ public class MergeSorter<T> implements Sorter<T> {
   @Override
   public void sort(T[] values) {
     if (values.length < 2) {
-      return; 
+      return;
     } // if
     T[] temp = values.clone();
     mergeSort(values, temp, 0, values.length - 1);
@@ -98,16 +98,16 @@ public class MergeSorter<T> implements Sorter<T> {
    *   The ending index of the second sorted half.
    */
   private void merge(T[] values, T[] temp, int leftStart, int mid, int rightEnd) {
-    int leftIndex = leftStart;      
-    int rightIndex = mid + 1;       
-    int tempIndex = leftStart;      
+    int leftIndex = leftStart;
+    int rightIndex = mid + 1;
+    int tempIndex = leftStart;
     // Merge elements from both halves into temp
     while (leftIndex <= mid && rightIndex <= rightEnd) {
       if (order.compare(values[leftIndex], values[rightIndex]) <= 0) {
         temp[tempIndex++] = values[leftIndex++];
       } else {
         temp[tempIndex++] = values[rightIndex++];
-      } // else 
+      } // else
     } // while
     while (leftIndex <= mid) {
       temp[tempIndex++] = values[leftIndex++];

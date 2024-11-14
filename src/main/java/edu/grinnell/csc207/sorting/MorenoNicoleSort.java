@@ -5,17 +5,17 @@ import java.util.Comparator;
 /**
  * A sorting algorithm that dynamically adjusts to the input data by combining
  * Merge Sort and Insertion Sort, optimizing performance based on subarray size.
- * This strategy efficiently handles large data and leverages the simplicity of 
+ * This strategy efficiently handles large data and leverages the simplicity of
  * Insertion Sort for small or nearly sorted sections.
  *
  * @param <T> The types of values that are sorted.
  */
 public class MorenoNicoleSort<T> implements Sorter<T> {
 
-  /** Comparator used to define the order of elements */
+  /** Comparator used to define the order of elements. */
   private final Comparator<? super T> order;
 
-  /** Threshold below which Insertion Sort is applied */
+  /** Threshold below which Insertion Sort is applied. */
   private static final int INSERTION_SORT_THRESHOLD = 16;
 
   /**
@@ -88,7 +88,9 @@ public class MorenoNicoleSort<T> implements Sorter<T> {
   @SuppressWarnings("unchecked")
   private void merge(T[] values, int lb, int mid, int ub) {
     T[] temp = (T[]) new Object[ub - lb + 1];
-    int left = lb, right = mid + 1, tempIndex = 0;
+    int left = lb;
+    int right = mid + 1;
+    int tempIndex = 0;
     while (left <= mid && right <= ub) {
       if (order.compare(values[left], values[right]) <= 0) {
         temp[tempIndex++] = values[left++];

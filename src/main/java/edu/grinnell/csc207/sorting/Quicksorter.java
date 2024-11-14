@@ -20,6 +20,9 @@ public class Quicksorter<T> implements Sorter<T> {
    * The way in which elements are ordered.
    */
   Comparator<? super T> order;
+  /**
+   * Random Index.
+   */
   private final Random random = new Random();
 
   // +--------------+------------------------------------------------
@@ -81,7 +84,7 @@ public class Quicksorter<T> implements Sorter<T> {
     int pivotIndex = lb + random.nextInt(ub - lb + 1);
     T pivot = values[pivotIndex];
     swap(values, pivotIndex, ub);
-    int i = lb - 1; 
+    int i = lb - 1;
     for (int j = lb; j < ub; j++) {
       if (order.compare(values[j], pivot) < 0) {
         i++;
