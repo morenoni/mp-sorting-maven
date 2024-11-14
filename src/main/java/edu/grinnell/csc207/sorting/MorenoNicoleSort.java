@@ -8,6 +8,8 @@ import java.util.Comparator;
  * This strategy efficiently handles large data and leverages the simplicity of
  * Insertion Sort for small or nearly sorted sections.
  *
+ * @author Nicole Moreno Gonzalez
+ *
  * @param <T> The types of values that are sorted.
  */
 public class MorenoNicoleSort<T> implements Sorter<T> {

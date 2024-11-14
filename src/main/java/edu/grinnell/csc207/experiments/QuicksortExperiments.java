@@ -13,6 +13,7 @@ import edu.grinnell.csc207.sorting.Sorter;
 /**
  * Some quick experiments with Quicksort.
  *
+ * @author Nicole Moreno Gonzalez
  * @author Samuel A. Rebelsky.
  */
 public class QuicksortExperiments {

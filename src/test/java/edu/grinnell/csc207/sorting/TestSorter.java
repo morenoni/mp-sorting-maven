@@ -13,7 +13,7 @@ import edu.grinnell.csc207.util.ArrayUtils;
  * Rather, you should subclass it and initialize stringSorter and
  * intSorter in a static @BeforeAll method.
  *
- * @author Your Name
+ * @author Nicole Moreno Gonzalez
  * @uathor Samuel A. Rebelsky
  */
 public class TestSorter {

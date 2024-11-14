@@ -8,6 +8,7 @@ import java.util.Random;
  *
  * @param <T> The types of values that are sorted.
  *
+ * @author Nicole Moreno Gonzalez
  * @author Samuel A. Rebelsky
  */
 
