@@ -64,8 +64,7 @@ public class SelectionSorter<T> implements Sorter<T> {
    * Find the smallest element in the unsorted portion of the array
    * and place it at the given index.
    *
-   * @param values
-   *   The array containing the elements to sort.
+   * @param values the array containing the elements to sort.
    * @param startIndex
    *   The index in the array where the smallest element in the
    *   unsorted portion should be placed.

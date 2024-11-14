@@ -69,17 +69,17 @@ public class MergeSorter<T> implements Sorter<T> {
    *   The array to be sorted.
    * @param temp
    *   A temporary array used for merging.
-   * @param start
+   * @param lb
    *   The starting index of the portion to be sorted.
-   * @param end
+   * @param ub
    *   The ending index of the portion to be sorted.
    */
-  private void mergeSort(T[] values, T[] temp, int start, int end) {
-    if (start < end) {
-      int mid = start + (end - start) / 2;
-      mergeSort(values, temp, start, mid);
-      mergeSort(values, temp, mid + 1, end);
-      merge(values, temp, start, mid, end);
+  private void mergeSort(T[] values, T[] temp, int lb, int ub) {
+    if (lb < ub) {
+      int mid = lb + (ub - lb) / 2;
+      mergeSort(values, temp, lb, mid);
+      mergeSort(values, temp, mid + 1, ub);
+      merge(values, temp, lb, mid, ub);
     } // if
   } // mergeSort
 
