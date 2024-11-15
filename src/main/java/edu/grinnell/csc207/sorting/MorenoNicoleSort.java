@@ -4,8 +4,8 @@ import java.util.Comparator;
 
 /**
  * This is a sorting algorithm that combines Merge Sort and Insertion Sort,
- * optimizing performance based on subarray size. This strategy efficiently 
- * handles large data and leverages the simplicity of InsertionSort for 
+ * optimizing performance based on subarray size. This strategy efficiently
+ * handles large data and leverages the simplicity of InsertionSort for
  * small or nearly sorted sections.
  *
  * @author Nicole Moreno Gonzalez
