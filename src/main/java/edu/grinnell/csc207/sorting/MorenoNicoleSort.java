@@ -3,10 +3,10 @@ package edu.grinnell.csc207.sorting;
 import java.util.Comparator;
 
 /**
- * A sorting algorithm that dynamically adjusts to the input data by combining
- * Merge Sort and Insertion Sort, optimizing performance based on subarray size.
- * This strategy efficiently handles large data and leverages the simplicity of
- * Insertion Sort for small or nearly sorted sections.
+ * This is a sorting algorithm that combines Merge Sort and Insertion Sort,
+ * optimizing performance based on subarray size. This strategy efficiently 
+ * handles large data and leverages the simplicity of InsertionSort for 
+ * small or nearly sorted sections.
  *
  * @author Nicole Moreno Gonzalez
  *
