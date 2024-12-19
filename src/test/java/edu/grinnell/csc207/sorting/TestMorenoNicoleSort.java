@@ -15,7 +15,7 @@ import edu.grinnell.csc207.util.ArrayUtils;
  * @author Nicole Moreno Gonzalez
  *
  */
-public class TestMorenoNicoleSorter{
+public class TestMorenoNicoleSort{
   
   /**
    * Set up the sorters.
@@ -148,4 +148,4 @@ public class TestMorenoNicoleSorter{
       assertSorts(expected, mixed, intSorter);
     }
   } // largeArrayTest
-} // Class TestMorenoNicoleSorter
+} // Class TestMorenoNicoleSort
